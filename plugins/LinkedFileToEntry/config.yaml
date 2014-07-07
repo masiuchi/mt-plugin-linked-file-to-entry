@@ -1,0 +1,28 @@
+id: LinkedFileToEntry
+name: LinkedFileToEntry
+version: 0.01
+author_name: Masahiro Iuchi
+author_link: https://github.com/masiuchi
+plugin_link: https://github.com/masiuchi/mt-plugin-linked-file-to-entry
+description: <__trans phrase="Link to file for entries.">
+l10n_class: LinkedFileToEntry::L10N
+
+object_types:
+    entry:
+        linked_file: string meta
+        linked_file_more: string meta
+
+        linked_file_mtime: string meta
+        linked_file_size: integer meta
+
+callbacks:
+    init_app: $LinkedFileToEntry::LinkedFileToEntry::Callback::init_app
+    take_down:
+        priority: 9
+        code: $LinkedFileToEntry::LinkedFileToEntry::Callback::take_down
+
+    MT::App::CMS::template_source.edit_entry: $LinkedFileToEntry::LinkedFileToEntry::Callback::tmpl_src_edit_entry
+    MT::App::CMS::template_param.edit_entry: $LinkedFileToEntry::LinkedFileToEntry::Callback::tmpl_param_edit_entry
+
+    cms_pre_save.entry: $LinkedFileToEntry::LinkedFileToEntry::Callback::pre_save_entry
+
