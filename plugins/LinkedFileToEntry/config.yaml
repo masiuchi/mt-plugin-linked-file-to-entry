@@ -25,4 +25,5 @@ callbacks:
     MT::App::CMS::template_param.edit_entry: $LinkedFileToEntry::LinkedFileToEntry::Callback::tmpl_param_edit_entry
 
     cms_pre_save.entry: $LinkedFileToEntry::LinkedFileToEntry::Callback::pre_save_entry
+    cms_pre_save.page: $LinkedFileToEntry::LinkedFileToEntry::Callback::pre_save_entry
 
