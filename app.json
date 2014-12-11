@@ -1,0 +1,10 @@
+{
+  "name": "MT::Plugin::LinkedFileToEntry",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/masiuchi/heroku-buildpack-multi.git#mt",
+    "MT_ZIP_URL": "http://www.movabletype.jp/downloads/stable/MTOS-5.2.11.zip"
+  },
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
